@@ -1,0 +1,6 @@
+e2e/
+node_modules/
+dist/
+.git/
+.vscode/
+.vs/
