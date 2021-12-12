@@ -21,9 +21,14 @@ namespace ContainerNinja
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+
             services.AddPersistence(Configuration);
             services.AddCore(Configuration);
 
+            // prevents Mvc to throw 400 on invalid RequestBody
+            // this is since we're using Fluent to do the same
+            // within the Action Method
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
@@ -31,7 +36,10 @@ namespace ContainerNinja
 
             services.AddJwtBearerAuthentication();
 
+            //services.AddResponseCaching();
+
             services.AddControllers();
+
             services.AddSwaggerWithVersioning();
         }
 
@@ -42,15 +50,22 @@ namespace ContainerNinja
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwaggerWithVersioning(provider);
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyHeader()
+                .AllowAnyOrigin()
+                .AllowAnyMethod();
+            });
 
-            app.UseCaching();
+            app.UseSwaggerWithVersioning(provider);
 
             app.UseRouting();
 
             app.UseAuthentication();
 
             app.UseAuthorization();
+
+            //app.UseCaching();
 
             app.UseEndpoints(endpoints =>
             {

@@ -61,6 +61,7 @@ namespace ContainerNinja.Controllers.V1
 
         [MapToApiVersion("1.0")]
         [HttpDelete]
+        [Route("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesErrorResponseType(typeof(BaseResponseDTO))]
         public async Task<IActionResult> Delete(int id)

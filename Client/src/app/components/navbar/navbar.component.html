@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-bottom: 20px;">
+  <a class="navbar-brand" href="#">ContainerNinja</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['items']">Items <span class="sr-only">(current)</span></a>
+      </li>
+      <li *ngIf="!tokenService.IsAuthenticated" class="nav-item">
+        <a class="nav-link" [routerLink]="['login']">Login</a>
+      </li>
+      <li *ngIf="tokenService.IsAuthenticated" class="nav-item">
+        <a class="nav-link" href="javascript:void(0)" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

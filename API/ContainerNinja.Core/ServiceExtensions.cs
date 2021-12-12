@@ -30,8 +30,7 @@ namespace ContainerNinja.Core
 
             services.AddMemoryCache();
             services.AddHttpContextAccessor();
-            services.AddResponseCaching();
-
+            
             // register services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenService, TokenService>();

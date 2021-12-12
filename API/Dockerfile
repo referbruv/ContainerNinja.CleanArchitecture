@@ -6,6 +6,8 @@ WORKDIR /src
 
 # copy all the layers' csproj files into respective folders
 COPY ["./ContainerNinja.Contracts/ContainerNinja.Contracts.csproj", "src/ContainerNinja.Contracts/"]
+COPY ["./ContainerNinja.Migrations/ContainerNinja.Migrations.csproj", "src/ContainerNinja.Migrations/"]
+COPY ["./ContainerNinja.Infrastructure/ContainerNinja.Infrastructure.csproj", "src/ContainerNinja.Infrastructure/"]
 COPY ["./ContainerNinja.Core/ContainerNinja.Core.csproj", "src/ContainerNinja.Core/"]
 COPY ["./ContainerNinja.API/ContainerNinja.API.csproj", "src/ContainerNinja.API/"]
 

@@ -1,0 +1,43 @@
+<form (ngSubmit)="save()" [formGroup]="form">
+    <div class="row">
+        <div class="mx-auto col-md-6">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <div class="float-left">
+                        <h1 *ngIf="id > 0">Edit</h1>
+                        <h1 *ngIf="id == 0">Add</h1>
+                    </div>
+                    <div *ngIf="id > 0" class="float-right">
+                        <a class="btn btn-default text-danger" href="javascript:void(0)" (click)="delete()">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input [value]="item.name" type="text" class="form-control" formControlName="name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Description">Description</label>
+                        <textarea style="height:10em;" [value]="item.description" class="form-control"
+                            formControlName="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="categories">Categories</label>
+                        <input [value]="item.categories" type="text" class="form-control"
+                            formControlName="categories" />
+                    </div>
+                    <div class="form-group">
+                        <label for="colorCode">Color</label>
+                        <input type="color" [value]="item.colorCode" class="form-control" formControlName="colorCode" />
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-dark" type="submit" [disabled]="!form.valid">Save</button>
+                    <a class="btn btn-default" href="javascript:void(0)" (click)="back()">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

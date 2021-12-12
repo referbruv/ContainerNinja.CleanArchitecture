@@ -33,8 +33,8 @@ namespace ContainerNinja.Core.Options
         {
             var info = new OpenApiInfo
             {
-                Title = $"Container Ninja API V{description.ApiVersion.ToString()}",
-                Description = @"Container Ninja is a boilerplate solution, built to demonstrate a full stack containerized application using ASP.NET Core (.NET 6) and Docker with Clean Architecture.",
+                Title = $"FullStackNinja.CleanArchitecture API V{description.ApiVersion.ToString()}",
+                Description = @"FullStackNinja.CleanArchitecture is a boilerplate solution, built to demonstrate a full stack containerized application using ASP.NET Core (.NET 6) and Docker with Clean Architecture.",
                 Version = description.ApiVersion.ToString()
             };
 
