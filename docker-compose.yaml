@@ -1,21 +1,21 @@
 version: "3"
 services: 
-    nginx:
+    proxy:
         build: 
-            context: ./Nginx
+            context: ./Proxy
             dockerfile: Dockerfile
         ports: 
-            - 80:80
+            - "80:80"
         restart: always
     client:
         build:
             context: ./Client
             dockerfile: Dockerfile
         ports: 
-            - 5000:80
-    dncapi:
+            - "9000:80"
+    api:
         build: 
             context: ./API
             dockerfile: Dockerfile
         ports: 
-            - 3000:80
+            - "5000:80"

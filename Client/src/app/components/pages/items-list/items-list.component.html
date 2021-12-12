@@ -1,0 +1,26 @@
+<div class="row">
+    <ng-container *ngFor="let item of items">
+        <div class="col-md-4">
+            <a [routerLink]="[item.id, 'edit']">
+                <div [ngStyle]="{'background':item.colorCode}" class="card card-primary">
+                    <div class="card-body">
+                        <h1 class="card-title">{{item.name}}</h1>
+                        <p class="card-text">{{item.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <ng-container *ngFor="let cat of item.categories.split(',')">
+                            <span class="badge badge-light mx-md-1">{{cat}}</span>
+                        </ng-container>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </ng-container>
+    <div *ngIf="items.length == 0" class="col-md-12">
+        <h1 class="display-4">No items found. Click on Add button to create one.</h1>
+    </div>
+</div>
+
+<a [routerLink]="['/items/add']" class="float bg-success">
+    <i class="fa fa-plus my-float"></i>
+</a>
