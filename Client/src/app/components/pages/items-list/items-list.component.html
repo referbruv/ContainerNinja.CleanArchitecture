@@ -16,6 +16,9 @@
             </a>
         </div>
     </ng-container>
+    <div *ngIf="items.length == 0" class="col-md-12">
+        <h1 class="display-4">No items found. Click on Add button to create one.</h1>
+    </div>
 </div>
 
 <a [routerLink]="['/items/add']" class="float bg-success">

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { AuthToken } from '../models/AuthToken';
 import { LoginDTO } from '../models/LoginDTO';
+import { Config } from './config';
 import { TokenService } from './token.service';
 
 @Injectable({
@@ -13,7 +14,7 @@ export class AuthService {
     }
 
     login(loginDto: LoginDTO) {
-        return this.http.post('https://localhost:5001/api/v1/Auth/token', loginDto)
+        return this.http.post(`${Config.api}/Auth/token`, loginDto)
             .pipe(map((response) => {
                 let token = <AuthToken>response;
                 this.tokenService.setToken(token);
