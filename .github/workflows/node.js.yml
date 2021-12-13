@@ -10,8 +10,8 @@ on:
     branches: [ master ]
 
 defaults:
-    run:
-      working-directory: ./Client
+  run:
+    working-directory: ./Client
 
 jobs:
   build:
