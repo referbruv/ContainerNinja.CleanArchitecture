@@ -1,3 +1,5 @@
+![ContainerNinja.CleanArchitecture](assets/container-ninja-ca.png)
+
 [![.NET](https://github.com/referbruv/ContainerNinja.CleanArchitecture/actions/workflows/dotnet.yml/badge.svg)](https://github.com/referbruv/ContainerNinja.CleanArchitecture/actions/workflows/dotnet.yml)
 [![Docker](https://github.com/referbruv/ContainerNinja.CleanArchitecture/actions/workflows/docker-image.yml/badge.svg)](https://github.com/referbruv/ContainerNinja.CleanArchitecture/actions/workflows/docker-image.yml)
 ![GitHub stars](https://img.shields.io/github/stars/referbruv/ContainerNinja.CleanArchitecture)
@@ -37,9 +39,12 @@ The Solution is built keeping in mind the most fundamental blocks an API must ha
 * MediatR for .NET 6
 * Fluent Validation for .NET 6
 * SQLite
-* Docker Compose
 * SwaggerUI
 * AutoMapper
+* Angular 13 (Client)
+* Bootstrap 4 (CSS Framework)
+* Nginx (Proxy)
+* Docker Compose
 
 # How do I get started with Docker Compose?
 
