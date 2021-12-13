@@ -102,7 +102,7 @@ I really hope this solution helps developers get started on building awesome thi
 
 Found this solution helpful and useful? You can do these to help this reach greater audience.
 
-1. Leave a star on this repository :star:
+1. Leave a star on this repository [![Github referbruv](https://img.shields.io/github/stars/referbruv?style=flat-square)](https://github.com/referbruv) :star:
 2. Recommend this solution to your colleagues and dev community
 3. Join my [Twitter family](https://twitter.com/referbruv). I regularly post awesome content on dev over there.
 4. Join my [Facebook community](https://www.facebook.com/referbruv). I regularly post interesting content over there as well.
