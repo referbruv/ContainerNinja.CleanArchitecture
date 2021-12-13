@@ -22,6 +22,8 @@ export class AddoreditComponent implements OnInit {
   };
   form: FormGroup;
   isEdit: boolean = false;
+  errors: string[] = [];
+  isError: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute, private itemsService: ItemsService, private formBuilder: FormBuilder, private router: Router) {
     this.form = this.formBuilder.group({
@@ -58,12 +60,30 @@ export class AddoreditComponent implements OnInit {
   save() {
     console.log(this.form.value);
     if (this.isEdit) {
-      this.itemsService.update(this.id, <CreateOrUpdateItemDTO>this.form.value).subscribe(res => {
-        this.back();
+      this.itemsService.update(this.id, <CreateOrUpdateItemDTO>this.form.value).subscribe({
+        next: res => {
+          this.back();
+        },
+        error: (err) => {
+          if (err.ok === false) {
+            this.isError = true;
+            let e = err.error;
+            this.errors = <string[]>e.errors;
+          }
+        }
       });
     } else {
-      this.itemsService.add(<CreateOrUpdateItemDTO>this.form.value).subscribe(res => {
-        this.back();
+      this.itemsService.add(<CreateOrUpdateItemDTO>this.form.value).subscribe({
+        next: res => {
+          this.back();
+        },
+        error: (err) => {
+          if (err.ok === false) {
+            this.isError = true;
+            let e = err.error;
+            this.errors = <string[]>e.errors;
+          }
+        }
       });
     }
   }
@@ -71,8 +91,17 @@ export class AddoreditComponent implements OnInit {
   delete() {
     let response = confirm('Are you sure you want to delete?');
     if (response === true) {
-      this.itemsService.delete(this.id).subscribe(res => {
-        this.back();
+      this.itemsService.delete(this.id).subscribe({
+        next: res => {
+          this.back();
+        },
+        error: (err) => {
+          if (err.ok === false) {
+            this.isError = true;
+            let e = err.error;
+            this.errors = <string[]>e.errors;
+          }
+        }
       });
     }
   }
