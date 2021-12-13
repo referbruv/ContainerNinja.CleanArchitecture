@@ -104,8 +104,8 @@ Found this solution helpful and useful? You can do these to help this reach grea
 
 1. Leave a star on this repository :star:
 2. Recommend this solution to your colleagues and dev community
-3. Join my Twitter family. I regularly post awesome content on dev over there.
-4. Join my Facebook community. I regularly post interesting content over there as well.
+3. Join my [Twitter family](https://twitter.com/referbruv). I regularly post awesome content on dev over there.
+4. Join my [Facebook community](https://www.facebook.com/referbruv). I regularly post interesting content over there as well.
 5. You can also buy me [a cup of great coffee :coffee:](https://www.buymeacoffee.com/referbruv)!
 
 <a href="https://www.buymeacoffee.com/referbruv" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
