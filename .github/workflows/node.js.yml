@@ -9,11 +9,12 @@ on:
   pull_request:
     branches: [ master ]
 
+defaults:
+    run:
+      working-directory: ./Client
+
 jobs:
   build:
-    defaults:
-      run:
-        working-directory: ./Client
     runs-on: ubuntu-latest
 
     strategy:
