@@ -1,3 +1,8 @@
+![.NET Core](https://github.com/referbruv/ContainerNinja.CleanArchitecture/workflows/.NET/badge.svg?branch=master)
+![.Docker](https://github.com/referbruv/ContainerNinja.CleanArchitecture/workflows/Docker%20Image%20CI/badge.svg?branch=master)
+![GitHub stars](https://img.shields.io/github/stars/referbruv/ContainerNinja.CleanArchitecture)
+[![Twitter Follow](https://img.shields.io/twitter/follow/referbruv?style=social&label=follow)](https://twitter.com/referbruv)
+
 # What is this project about?
 
 ContainerNinja is a boilerplate template project to demonstrate building a multi-container Full Stack application with ASP.NET Core (.NET 6) Web API following Clean Architecture, and Angular. The solution uses Docker Compose to orchestrate deployment of this entire stack to Docker.
@@ -102,7 +107,7 @@ I really hope this solution helps developers get started on building awesome thi
 
 Found this solution helpful and useful? You can do these to help this reach greater audience.
 
-1. Leave a star on this repository [![Github referbruv](https://img.shields.io/github/stars/referbruv?style=flat-square)](https://github.com/referbruv) :star:
+1. Leave a star on this repository :star:
 2. Recommend this solution to your colleagues and dev community
 3. Join my [Twitter family](https://twitter.com/referbruv). I regularly post awesome content on dev over there.
 4. Join my [Facebook community](https://www.facebook.com/referbruv). I regularly post interesting content over there as well.
