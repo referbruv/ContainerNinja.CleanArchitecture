@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "ContainerNinja": {
+    "ContainerNinja.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

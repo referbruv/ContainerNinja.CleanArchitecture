@@ -1,5 +1,10 @@
 <div class="row">
     <div class="col-md-4 mx-auto rounded p-md-4">
+        <ng-container *ngIf="isError">
+            <div class="alert alert-danger" role="alert">
+                {{errMsg}}
+            </div>
+        </ng-container>
         <form (ngSubmit)="login()" [formGroup]="form">
             <div class="card">
                 <div class="card-body">
@@ -13,6 +18,7 @@
                         <input formControlName="password" class="form-control" placeholder="******" type="password" />
                     </div>
                     <button [disabled]="!form.valid" type="submit" class="btn bg-dark text-light">Login</button>
+                    <a href="javascript:void(0)" class="btn btn-default" (click)="back()">back</a>
                 </div>
             </div>
         </form>
