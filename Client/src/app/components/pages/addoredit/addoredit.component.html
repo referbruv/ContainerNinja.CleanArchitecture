@@ -1,3 +1,11 @@
+<ng-container *ngIf="isError && errors.length > 0">
+    <div class="alert alert-danger" role="alert">
+        <h4>Errors!</h4>
+        <ng-container *ngFor="let e of errors">
+            <p>{{e}}</p>
+        </ng-container>
+    </div>
+</ng-container>
 <form (ngSubmit)="save()" [formGroup]="form">
     <div class="row">
         <div class="mx-auto col-md-6">

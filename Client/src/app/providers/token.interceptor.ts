@@ -1,7 +1,7 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { catchError, Observable, of } from "rxjs";
+import { catchError, Observable, of, throwError } from "rxjs";
 import { TokenService } from "./token.service";
 
 @Injectable({
@@ -20,10 +20,10 @@ export class TokenInterceptor implements HttpInterceptor {
             });
         }
         return next.handle(req).pipe(catchError(res => {
-            if(res.ok === false && res.status === 401) {
+            if (res.ok === false && res.status === 401) {
                 this.router.navigate(['login']);
             }
-            return of(res);
+            return throwError(() => res);
         }))
     }
 }
