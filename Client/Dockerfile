@@ -10,3 +10,4 @@ RUN npm run build
 
 FROM nginx as runtime
 COPY --from=build /app/dist/client /usr/share/nginx/html
+COPY ["./conf/default.conf","/etc/nginx/conf.d/default.conf"]
