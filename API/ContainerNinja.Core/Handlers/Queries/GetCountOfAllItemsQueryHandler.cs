@@ -1,7 +1,7 @@
 ﻿using ContainerNinja.Contracts.Data;
 using MediatR;
 
-namespace ContainerNinja.Providers.Handlers.Queries
+namespace ContainerNinja.Core.Handlers.Queries
 {
     public class GetCountOfAllItemsQuery : IRequest<int>
     {

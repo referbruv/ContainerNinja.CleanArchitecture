@@ -1,7 +1,6 @@
 ﻿using ContainerNinja.Contracts.Data.Entities;
-using ContainerNinja.Core.Helpers;
+using ContainerNinja.Core.Handlers.Queries;
 using ContainerNinja.Core.Services;
-using ContainerNinja.Providers.Handlers.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;

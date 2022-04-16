@@ -1,5 +1,5 @@
 ﻿using ContainerNinja.Contracts.Constants;
-using ContainerNinja.Providers.Handlers.Queries;
+using ContainerNinja.Core.Handlers.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

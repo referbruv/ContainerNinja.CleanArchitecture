@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution items", "solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application Core", "Application Core", "{0B59756D-D179-4C9B-8A60-C1227B3ADCE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{33111354-BA99-4292-B745-20DE72643B62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +54,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA75BB14-6CB9-4E86-9AD7-C5507310BE82} = {0B59756D-D179-4C9B-8A60-C1227B3ADCE3}
+		{E047757B-FDC3-498E-B2C1-2B45DA59A735} = {0B59756D-D179-4C9B-8A60-C1227B3ADCE3}
+		{393C175C-2234-4535-B9B0-628B8AC5C6E4} = {33111354-BA99-4292-B745-20DE72643B62}
+		{35AC9366-6D2F-4644-AC54-E83DA9430B98} = {33111354-BA99-4292-B745-20DE72643B62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7925268D-B8FC-48E6-9257-32DA6B297EE0}

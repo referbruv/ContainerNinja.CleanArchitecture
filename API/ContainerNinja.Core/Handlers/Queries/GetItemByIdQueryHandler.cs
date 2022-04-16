@@ -6,7 +6,7 @@ using AutoMapper;
 using ContainerNinja.Contracts.Services;
 using Microsoft.Extensions.Logging;
 
-namespace ContainerNinja.Providers.Handlers.Queries
+namespace ContainerNinja.Core.Handlers.Queries
 {
     public class GetItemByIdQuery : IRequest<ItemDTO>
     {
@@ -52,7 +52,8 @@ namespace ContainerNinja.Providers.Handlers.Queries
             var result = _mapper.Map<ItemDTO>(item);
 
             _logger.LogInformation($"Add Item to Cache and return.");
-            return _cache.SetItem($"item_{request.ItemId}", result);
+            var _ = _cache.SetItem($"item_{request.ItemId}", result);
+            return result;
         }
     }
 }

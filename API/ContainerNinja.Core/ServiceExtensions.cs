@@ -1,4 +1,5 @@
-﻿using ContainerNinja.Contracts.Config;
+﻿using Alachisoft.NCache.Caching.Distributed;
+using ContainerNinja.Contracts.Config;
 using ContainerNinja.Contracts.Services;
 using ContainerNinja.Core.Options;
 using ContainerNinja.Core.Services;
@@ -6,7 +7,6 @@ using ContainerNinja.Core.Services.Jwt;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,13 +28,36 @@ namespace ContainerNinja.Core
                 options.AddConsole();
             });
 
-            services.AddMemoryCache();
+            //services.AddMemoryCache();
             services.AddHttpContextAccessor();
-            
+
             // register services
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenService, TokenService>();
-            services.AddSingleton<ICachingService, CachingService>();
+
+            // if DistributedCaching is enabled
+            // return an instance of DistributedCachingService implementation
+            // else return an In-Memory caching implementation
+            services.AddSingleton<ICachingService>(x =>
+            {
+                if (configuration.GetValue<bool>("IsDistributedCachingEnabled"))
+                {
+                    return ActivatorUtilities.CreateInstance<DistributedCachingService>(x);
+                }
+                else
+                {
+                    return ActivatorUtilities.CreateInstance<CachingService>(x);
+                }
+            });
+
+            //services.AddNCacheDistributedCache(configuration =>
+            //{
+            //    configuration.CacheName = "myCache";
+            //    configuration.EnableLogs = true;
+            //    configuration.ExceptionsEnabled = true;
+            //});
+
+            services.AddNCacheDistributedCache(configuration.GetSection("NCacheSettings"));
 
             return services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly())
                 .AddAutoMapper(Assembly.GetExecutingAssembly())
