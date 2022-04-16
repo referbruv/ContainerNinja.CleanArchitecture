@@ -7,7 +7,7 @@ using ContainerNinja.Core.Exceptions;
 using AutoMapper;
 using Microsoft.Extensions.Logging;
 
-namespace ContainerNinja.Providers.Handlers.Commands
+namespace ContainerNinja.Core.Handlers.Commands
 {
     public class CreateItemCommand : IRequest<ItemDTO>
     {

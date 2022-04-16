@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using ContainerNinja.Contracts.Data;
 
-namespace ContainerNinja.Providers.Handlers.Commands
+namespace ContainerNinja.Core.Handlers.Commands
 {
     public class DeleteItemCommand : IRequest<int>
     {

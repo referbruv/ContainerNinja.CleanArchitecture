@@ -7,7 +7,7 @@ using AutoMapper;
 using ContainerNinja.Contracts.Services;
 using Microsoft.Extensions.Logging;
 
-namespace ContainerNinja.Providers.Handlers.Commands
+namespace ContainerNinja.Core.Handlers.Commands
 {
     public class UpdateItemCommand : IRequest<ItemDTO>
     {
