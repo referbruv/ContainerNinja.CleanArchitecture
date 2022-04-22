@@ -22,6 +22,7 @@ The Solution is built keeping in mind the most fundamental blocks an API must ha
 - [x] ETag generation and validation on the API side for Response Caching (GET) and Collision detection (PUT)
 - [x] Ready to use Docker configuration with Dockerfiles
 - [x] In-Memory Caching for single Entity via IMemoryCache
+- [x] Distributed Caching implementation with NCache 
 - [x] JWT Token API for Generation and Configured JWT Validation
 - [x] Roles based Authorization with predefined Roles
 - [x] Auditable Entities with User Tracking
