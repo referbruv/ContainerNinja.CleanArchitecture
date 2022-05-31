@@ -7,20 +7,44 @@ using ContainerNinja.Infrastructure;
 using ContainerNinja.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Serilog;
 
 namespace ContainerNinja
 {
     public class Startup
     {
+        private readonly ILogger _serilogLogger;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            _serilogLogger = new LoggerConfiguration()
+                .ReadFrom.Configuration(configuration)
+                //.WriteTo.Console()
+                //.WriteTo.MSSqlServer(
+                //    configuration.GetConnectionString("LoggingDbConnection"),
+                //    sinkOptions: new Serilog.Sinks.MSSqlServer.MSSqlServerSinkOptions
+                //    {
+                //        AutoCreateSqlTable = true,
+                //        TableName = "SeriLogs"
+                //    }
+                //)
+                //.WriteTo.File(
+                //    "logs/log.log",
+                //    rollingInterval: RollingInterval.Hour)
+                .CreateLogger();
         }
 
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // add Serilog as the logging provider
+            services.AddLogging(b =>
+            {
+                b.AddSerilog(_serilogLogger);
+            });
+
             services.AddCors();
 
             services.AddPersistence(Configuration);

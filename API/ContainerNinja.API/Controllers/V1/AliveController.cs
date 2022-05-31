@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace ContainerNinja.Controllers.V1
 {
@@ -7,10 +8,21 @@ namespace ContainerNinja.Controllers.V1
     [Route("api/v{version:apiVersion}/[controller]")]
     public class AliveController : ControllerBase
     {
-        [HttpGet]
-        public string Get() 
+        private readonly ILogger<AliveController> _logger;
+
+        public AliveController(ILogger<AliveController> logger)
         {
-            return "API is alive!";
+            _logger = logger;
+        }
+
+        [HttpGet]
+        public string Get()
+        {
+            _logger.LogInformation("Executing Action AliveController.Get()");
+
+            //return "API is alive!";
+
+            throw new System.Exception("Some Exception");
         }
     }
 }

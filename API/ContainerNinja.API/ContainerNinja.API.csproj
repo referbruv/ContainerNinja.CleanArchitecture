@@ -9,11 +9,17 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 			<PrivateAssets>all</PrivateAssets>
 		</PackageReference>
+		<PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.7.0" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\ContainerNinja.Core\ContainerNinja.Core.csproj" />
 	  <ProjectReference Include="..\ContainerNinja.Infrastructure\ContainerNinja.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="logs\" />
 	</ItemGroup>
 
 
