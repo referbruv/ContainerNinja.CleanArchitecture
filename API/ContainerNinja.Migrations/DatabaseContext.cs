@@ -14,6 +14,12 @@ namespace ContainerNinja.Migrations
             _user = user;
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // modelBuilder.Entity<User>().Property(u => u.Id).ValueGeneratedOnAdd();
+            // modelBuilder.Entity<Item>().Property(u => u.Id).ValueGeneratedOnAdd();
+        }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var item in ChangeTracker.Entries<User>().AsEnumerable())

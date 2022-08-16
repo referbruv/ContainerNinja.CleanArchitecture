@@ -1,5 +1,19 @@
 version: "3"
 services: 
+    db:
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_DB: appdb
+            POSTGRES_USER: puser
+            POSTGRES_PASSWORD: abc@123
+        ports:
+            - "5432:5432"
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - "8080:8080"
     proxy:
         build: 
             context: ./Proxy
@@ -17,5 +31,7 @@ services:
         build: 
             context: ./API
             dockerfile: Dockerfile
+        depends_on:
+            - db
         ports: 
             - "5000:80"
