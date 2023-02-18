@@ -7,6 +7,7 @@ using ContainerNinja.Infrastructure;
 using ContainerNinja.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using ContainerNinja.API.Filters;
 
 namespace ContainerNinja
 {
@@ -38,7 +39,10 @@ namespace ContainerNinja
 
             //services.AddResponseCaching();
 
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add<AddHandlerHostHeaderResponseFilter>();
+            });
 
             services.AddSwaggerWithVersioning();
         }
